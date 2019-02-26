@@ -1,26 +1,11 @@
-<h1>Conflicts#show</h1>
-<p>Find me in app/views/conflicts/show.html.erb</p>
-
 <h2>Conflito</h2>
 
 <p>Nome:  <%= @conflict.name %> </p>
 <p>Reclamante: <%= @conflict.user.email  %></p>
 <p>Mediador: <%= @conflict.mediator.name %></p>
 
-<% if current_user.mediator == nil %>
-<% else %>
-
+<% if current_user.mediator != nil %>
   <%= link_to "Pegar Conflito", catch_conflict_path, class: "btn btn-primary" %>
-
+    <%= link_to "Deixar Conflito", leave_conflict_path, class: "btn btn-danger" %>
 <% end %>
 
-
-<%= current_user.mediator.name %>
-<%= @conflict.mediator.name %>
-<%= current_user.mediator %>
-<p>*******</p>
-<%= current_user.mediator.id %>
-<%= @conflict.mediator.id %>
-<p>********</p>
-<%= @conflict.mediator_id %>
-<%= current_user.mediator.id %>

@@ -1,5 +1,5 @@
 class ConflictsController < ApplicationController
-  before_action :find_conflict, only: [:catch]
+  before_action :find_conflict, only: [:catch, :leave]
 
   def index
     @conflicts = Conflict.all
@@ -41,6 +41,12 @@ class ConflictsController < ApplicationController
 
   def catch
     @conflict.mediator_id = current_user.mediator.id
+    @conflict.save!
+    redirect_to conflict_path(@conflict)
+  end
+
+  def leave
+    @conflict.mediator_id = 5
     @conflict.save!
     redirect_to conflict_path(@conflict)
   end

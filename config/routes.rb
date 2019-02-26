@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :conflicts do
     member do
       get 'catch'
+      get 'leave'
     end
   end
 
