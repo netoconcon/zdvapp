@@ -39,6 +39,6 @@ class MediatorsController < ApplicationController
   private
 
   def mediator_params
-    params.require(:client).permit(:name)
+    params.require(:mediator).permit(:name, :user_id)
   end
 end
