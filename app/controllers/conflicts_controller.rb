@@ -37,6 +37,12 @@ class ConflictsController < ApplicationController
     redirect_to profile_path
   end
 
+  def catch_conflict
+    @mediator = current_user.mediator
+    @conflict = Conflict.find(params[:id])
+    @conflict.mediator = @mediator
+  end
+
   private
 
   def conflict_params
