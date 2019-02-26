@@ -13,6 +13,7 @@ class MediatorsController < ApplicationController
 
   def create
     @mediator = Mediator.new(mediator_params)
+    @mediator.user = current_user
     if @mediator.save
       redirect_to mediator_path(@mediator)
     else
@@ -39,6 +40,6 @@ class MediatorsController < ApplicationController
   private
 
   def mediator_params
-    params.require(:mediator).permit(:name, :user_id)
+    params.require(:mediator).permit(:name)
   end
 end
