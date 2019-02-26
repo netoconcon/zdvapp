@@ -1,2 +1,18 @@
 <h1>Conflicts#index</h1>
 <p>Find me in app/views/conflicts/index.html.erb</p>
+
+<p>Aqui ainda vou arrumar para o caras ver apenas os deles</p>
+<p>mediador poderá ver todos, mas mediador deverá ser aprovado por nós</p>
+
+<% @conflicts.each do |conflict| %>
+  <p>*************************************</p>
+  <ul>
+    <li><p>Nome: <%= conflict.name %></p></li>
+    <li><p>Reclamante: <%= conflict.user.email %></p></li>
+    <li><p>Mediador Responável: <%= conflict.mediator.name %></p></li>
+    <li><p>Status: <%= conflict.status %></p></li>
+  </ul>
+  <%= link_to "Ver Detalhes", conflict_path(conflict), class: "btn btn-warning" %>
+  <%= link_to "voltar", root_path, class: "btn btn-info" %>
+  <p>*************************************</p>
+<% end %>
