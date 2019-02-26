@@ -1,11 +1,11 @@
 <% @mediators.each do |mediator| %>
-
-  <ul>
-    <p>************************</p>
-    <li><%= mediator.name %></li>
-    <li><%= mediator.user.email %></li>
-    <%= link_to "ver mais", mediator_path(mediator), class: 'btn btn-primary' %>
-    <p>************************</p>
-  </ul>
-
+  <% if mediator.user.admin == false %>
+    <ul>
+      <p>************************</p>
+      <li><%= mediator.name %></li>
+      <li><%= mediator.user.email %></li>
+      <%= link_to "ver mais", mediator_path(mediator), class: 'btn btn-primary' %>
+      <p>************************</p>
+    </ul>
+  <% end %>
 <% end %>
