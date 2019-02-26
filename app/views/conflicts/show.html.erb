@@ -10,6 +10,17 @@
 <% if current_user.mediator == nil %>
 <% else %>
 
-  <%= link_to "Pegar Conflito", root_path, class: "btn btn-primary" %>
+  <%= link_to "Pegar Conflito", catch_conflict_path, class: "btn btn-primary" %>
 
 <% end %>
+
+
+<%= current_user.mediator.name %>
+<%= @conflict.mediator.name %>
+<%= current_user.mediator %>
+<p>*******</p>
+<%= current_user.mediator.id %>
+<%= @conflict.mediator.id %>
+<p>********</p>
+<%= @conflict.mediator_id %>
+<%= current_user.mediator.id %>

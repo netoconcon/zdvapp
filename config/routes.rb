@@ -5,7 +5,12 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :mediators
-  resources :conflicts
+
+  resources :conflicts do
+    member do
+      get 'catch'
+    end
+  end
 
   get 'dashboard', to: 'pages#dashboard'
 end

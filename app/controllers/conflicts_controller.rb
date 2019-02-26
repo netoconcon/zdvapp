@@ -1,4 +1,6 @@
 class ConflictsController < ApplicationController
+  before_action :find_conflict, only: [:catch]
+
   def index
     @conflicts = Conflict.all
   end
@@ -37,15 +39,19 @@ class ConflictsController < ApplicationController
     redirect_to profile_path
   end
 
-  def catch_conflict
-    @mediator = current_user.mediator
-    @conflict = Conflict.find(params[:id])
-    @conflict.mediator = @mediator
+  def catch
+    @conflict.mediator_id = current_user.mediator.id
+    @conflict.save!
+    redirect_to conflict_path(@conflict)
   end
 
   private
 
   def conflict_params
     params.require(:conflict).permit(:name)
+  end
+
+  def find_conflict
+    @conflict = Conflict.find(params[:id])
   end
 end
