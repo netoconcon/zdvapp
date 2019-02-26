@@ -1,0 +1,10 @@
+<h1> profileeee</h1>
+
+<%  if current_user.mediator == nil %>
+  <%= link_to "quero ser mediador", new_mediator_path, class: "btn btn-primary" %>
+<% end %>
+
+
+<%= link_to "Tenho um Conflito", new_conflict_path, class: "btn btn-primary" %>
+
+<%= link_to "Meus Conflitos", conflicts_path, class: "btn btn-success" %>
