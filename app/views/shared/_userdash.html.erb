@@ -1,5 +1,7 @@
 <h1> profileeee</h1>
 
+ <p>user: <%= current_user.email %></p>
+
 <%  if current_user.mediator == nil %>
   <%= link_to "quero ser mediador", new_mediator_path, class: "btn btn-primary" %>
 <% end %>

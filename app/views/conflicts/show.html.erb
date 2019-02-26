@@ -6,6 +6,10 @@
 
 <% if current_user.mediator != nil %>
   <%= link_to "Pegar Conflito", catch_conflict_path, class: "btn btn-primary" %>
-    <%= link_to "Deixar Conflito", leave_conflict_path, class: "btn btn-danger" %>
+    <% if @conflict.mediator_id == current_user.mediator.id %>
+      <%= link_to "Deixar Conflito", leave_conflict_path, class: "btn btn-danger" %>
+    <% end %>
 <% end %>
+
+<%= link_to "Voltar", root_path, class: "btn btn-primary" %>
 
