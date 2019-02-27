@@ -46,7 +46,7 @@ class ConflictsController < ApplicationController
   end
 
   def leave
-    @conflict.mediator_id = 5
+    @conflict.mediator_id = nil
     @conflict.save!
     redirect_to conflict_path(@conflict)
   end
