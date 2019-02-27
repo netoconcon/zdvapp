@@ -10,9 +10,9 @@
     <li><p>Nome: <%= conflict.name %></p></li>
     <li><p>Reclamante: <%= conflict.user.email %></p></li>
     <% if conflict.mediator != nil %>
-    <li><p>Mediador Responável: <%= conflict.mediator.name %></p></li>
+    <li><p>Facilitador Responável: <%= conflict.mediator.name %></p></li>
     <% else %>
-    <li><p>Mediador Responável: Sem Mediador </p></li>
+    <li><p>Facilitador Responável: Sem Facilitador </p></li>
     <% end %>
     <li><p>Status: <%= conflict.status %></p></li>
   </ul>
