@@ -1,3 +1,8 @@
+
+<h3>Nossos Mediadores</h3>
+
+<%= link_to "Voltar", root_path, class: "btn btn-warning" %>
+
 <% @mediators.each do |mediator| %>
   <% if mediator.user.admin == false %>
     <ul>

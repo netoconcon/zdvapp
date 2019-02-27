@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2019_02_26_182935) do
     t.string "name"
     t.string "status"
     t.bigint "user_id"
-    t.bigint "mediator_id", default: 5
+    t.bigint "mediator_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["mediator_id"], name: "index_conflicts_on_mediator_id"
